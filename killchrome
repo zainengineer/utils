@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#ps -ef | grep chrome |grep -v grep | grep Incident | awk '{print $2}' | xargs kill
+ps -ef | grep chrome |grep -v grep | grep gpu | awk '{print $2}' | xargs kill
+
