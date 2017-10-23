@@ -30,9 +30,12 @@ class ZCopy
     {
         $aMap = $this->getData();
         $vKey = $this->getKey();
-        $vKey || $this->haltError('key not provided');
+        if ($vKey == 'list'){
+            $this->haltError(print_r($aMap,true));
+        }
+        $vKey || $this->haltError('key not provided, try list');
         ($vKey != 'install') || $this->install();
-        isset($aMap[$vKey]) || $this->haltError('key not found');
+        isset($aMap[$vKey]) || $this->haltError('key not found, try list');
         return $aMap[$vKey];
     }
 
