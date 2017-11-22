@@ -5,6 +5,7 @@
 #observe that few times that when it goes to lock screen mode
 #and after many minutes I take out power, it goes to sleep (inactivity+no power)
 #then it wakes up properly otherwise it does not wake up
+sudo echo "sleeping in 20 seconds, lock your screen"
 sudo sleep 20s
 sudo systemctl suspend
 
