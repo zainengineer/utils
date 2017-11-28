@@ -6,6 +6,8 @@
 #and after many minutes I take out power, it goes to sleep (inactivity+no power)
 #then it wakes up properly otherwise it does not wake up
 sudo echo "sleeping in 20 seconds, lock your screen"
-sudo sleep 20s
+sudo sleep 5s
+gnome-screensaver-command -l
+sudo sleep 8s
 sudo systemctl suspend
 
