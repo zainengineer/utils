@@ -23,20 +23,28 @@ class ZPhpEnv
         $path = $this->phpFpmInitPath();
         return "$path $argument";
     }
-
-    protected function getCommandBasedOnArgument()
+    protected function processFirstArgumentOnly($firstArgument)
     {
-        global $argv;
-        $arguments = $argv;
-        $firstArgument = isset($arguments[1]) ? $arguments[1] : '';
         if (in_array($firstArgument, [
             'restart',
             'start',
+            'stop',
         ])) {
             return $this->fpmExecCommand($firstArgument);
         }
         else{
             return "echo unexecpted result for $firstArgument";
+        }
+    }
+    protected function getCommandBasedOnArgument()
+    {
+        global $argv;
+        $arguments = $argv;
+        if(isset($arguments[1])){
+            return $this->processFirstArgumentOnly($arguments[1]);
+        }
+        else{
+            return "echo no arguments provided, try something like zphpenv restart";
         }
     }
 
