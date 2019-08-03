@@ -5,6 +5,10 @@ class ZCopy
     protected function getData()
     {
         $vFilePath = dirname(dirname(__FILE__)) . '/local_data/data.json';
+        if (!file_exists($vFilePath)){
+            return ['add__data.json__in__local_data' =>"sample is provided, value will be copied to clipboard \n
+            write json into  " . dirname(__DIR__) . '/local_data' ];
+        }
         $aMap = json_decode(file_get_contents($vFilePath), true);
         return $aMap;
     }
