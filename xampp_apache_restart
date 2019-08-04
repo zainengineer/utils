@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+sudo /opt/lampp/bin/httpd -k restart
