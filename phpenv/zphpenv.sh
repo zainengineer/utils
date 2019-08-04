@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+echo "DONT USE PHPENV use brew for apache or may be phpbrew phpenv is problematic"
 
 #SCRIPTDIR=`dirname "$BASH_SOURCE"`
 REALSOURCE=`realpath "$BASH_SOURCE"`
