@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 script_path=$( cd "$(dirname "${BASH_SOURCE}")" ; pwd -P )
 pushd "$script_path" > /dev/null
 cp ~/Downloads/ocr.png ./img/ocr.png
